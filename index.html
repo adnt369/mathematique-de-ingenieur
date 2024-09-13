@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de coordonnées</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="t.png" alt="Logo" class="logo">
+        <h1>Bienvenue sur Derouiche-Tesla Company</h1>
+        <h2>Veuillez entrer vos coordonnées</h2>
+    </div>
+    <div class="container">
+        <form id="form-coordonnees">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telephone">Téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" required>
+
+            <label for="adresse">Adresse :</label>
+            <textarea id="adresse" name="adresse" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

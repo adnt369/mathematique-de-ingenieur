@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8fe3c8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+h1 {
+    font-size: 32px;
+    color: #e08536; /* Changez cette couleur selon vos besoins */
+    margin-bottom: 5px;
+}
+h2 {
+    font-size: 20px;
+    color: #dfded6;
+    margin-bottom: 20px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Style du logo avec un cadre */
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    border: 2px solid #333; /* Ajoute un cadre noir de 2px */
+    padding: 2px; /* Ajoute un espace entre l'image et le cadre */
+    border-radius: 8px; /* Arrondit les coins du cadre */
+    background-color: #77e7a0; /* Ajoute un fond blanc derrière l'image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre au cadre */
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #dfa058;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+p#message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: green;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('o.jpeg'); /* Chemin de votre image */
+    background-size: cover; /* L'image couvrira toute la page */
+    background-position: center; /* L'image sera centrée */
+    background-color: #8fe3c8; /* Couleur de fond au cas où l'image ne se charge pas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
