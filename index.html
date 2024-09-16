@@ -3,39 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire de coordonnées</title>
-    <link rel="stylesheet" href="style.css">
+    <title>To-Do List avec Vidéo de Fond</title>
+    <link rel="stylesheet" href="Untitled.css">
+    <!-- Lien vers Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <img src="t.png" alt="Logo" class="logo">
-        <h1>Bienvenue sur Derouiche-Tesla Company</h1>
-        <h2>Veuillez entrer vos coordonnées</h2>
+    
+    <!-- Conteneur pour la vidéo en arrière-plan -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="m.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
     </div>
+
+    <!-- Contenu principal (la to-do list) -->
     <div class="container">
-        <form id="form-coordonnees">
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" required>
+        <h1 class="title">Ma To-Do List</h1>
 
-            <label for="prenom">Prénom :</label>
-            <input type="text" id="prenom" name="prenom" required>
-
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="telephone">Téléphone :</label>
-            <input type="tel" id="telephone" name="telephone" required>
-
-            <label for="adresse">Adresse :</label>
-            <textarea id="adresse" name="adresse" required></textarea>
-
-            <button type="submit">Envoyer</button>
+        <form class="form">
+            <input type="text" class="input" placeholder="Ajouter une tâche...">
+            <button class="add-btn" type="submit">Ajouter</button>
         </form>
 
-        <p id="message"></p>
+        <ul class="list">
+            <!-- Les tâches apparaîtront ici -->
+        </ul>
+    </div>
+
+    <script src="Untitled.js"></script>
+
+</body>
+</html>
+<div class="signature-box">
+  <p class="signature">Créé par : Ali Derouiche © 2024</p>
+</div>
+<div class="about-box">
+    <h2>À propos de ce site</h2>
+    <p>Bienvenue sur notre site. Ici, vous trouverez une interface simple et intuitive pour gérer vos tâches quotidiennes. Ce site a été créé pour vous offrir une meilleure productivité et organisation.</p>
+</div>
+    <!-- Boîte pour afficher l'heure -->
+    <div class="time-box" id="time-box">
+        <!-- L'heure sera affichée ici par JavaScript -->
     </div>
 
     <script src="script.js"></script>
-    
 </body>
 </html>
