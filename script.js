@@ -1,16 +1,88 @@
-document.getElementById('form-coordonnees').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche le rechargement de la page lors de la soumission
+const formEl = document.querySelector(".form");
 
-    // Récupérer les valeurs du formulaire
-    let nom = document.getElementById('nom').value;
-    let prenom = document.getElementById('prenom').value;
-    let email = document.getElementById('email').value;
-    let telephone = document.getElementById('telephone').value;
-    let adresse = document.getElementById('adresse').value;
+const inputEl = document.querySelector(".input");
 
-    // Afficher un message de confirmation
-    let message = `Merci ${prenom} ${nom}, vos coordonnées ont été enregistrées.`;
-    document.getElementById('message').textContent = message;
+const ulEl = document.querySelector(".list");
 
-    // Vous pouvez envoyer les données à un serveur ici en utilisant fetch() ou AJAX
+let list = JSON.parse(localStorage.getItem("list"));
+if (list) {
+  list.forEach((task) => {
+    toDoList(task);
+  });
+}
+
+formEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+  toDoList();
 });
+
+function toDoList(task) {
+  let newTask = inputEl.value;
+  if (task) {
+    newTask = task.name;
+  }
+
+  const liEl = document.createElement("li");
+  if (task && task.checked) {
+    liEl.classList.add("checked");
+  }
+  liEl.innerText = newTask;
+  ulEl.appendChild(liEl);
+  inputEl.value = "";
+  const checkBtnEl = document.createElement("div");
+  checkBtnEl.innerHTML = `
+  <i class="fas fa-check-square">
+  `;
+  liEl.appendChild(checkBtnEl);
+  const trashBtnEl = document.createElement("div");
+  trashBtnEl.innerHTML = `
+  <i class="fas fa-trash"></i>
+  `;
+  liEl.appendChild(trashBtnEl);
+
+  checkBtnEl.addEventListener("click", () => {
+    liEl.classList.toggle("checked");
+    updateLocalStorage();
+  });
+
+  trashBtnEl.addEventListener("click", () => {
+    liEl.remove();
+    updateLocalStorage();
+  });
+  updateLocalStorage();
+}
+
+function updateLocalStorage() {
+  const liEls = document.querySelectorAll("li");
+  list = [];
+  liEls.forEach((liEl) => {
+    list.push({
+      name: liEl.innerText,
+      checked: liEl.classList.contains("checked"),
+    });
+  });
+  localStorage.setItem("list", JSON.stringify(list));
+}
+formEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const taskText = inputEl.value.trim();
+  if (taskText) {
+    toDoList();
+  } else {
+    alert("Nouveau tâche ajouté !");
+  }
+});
+function updateTime() {
+  const timeBox = document.getElementById('time-box');
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  timeBox.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// Met à jour l'heure toutes les secondes
+setInterval(updateTime, 1000);
+
+// Appelle une première fois pour afficher immédiatement l'heure
+updateTime();
