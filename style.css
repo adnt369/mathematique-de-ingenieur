@@ -11,11 +11,18 @@ body {
 .top-bar {
     
     width: 12%;
-    color: rgb(154, 187, 19);
+    color: rgb(36, 11, 196);
     padding: 10px;
+    margin-top: 50px;
     text-align: left;
     font-size: 0.9rem;
-}
+    background: rgb(213, 193, 12);
+    transition: width 2s, height 2s, transform 2s;}
+.top-bar:hover {
+    width: 12%;
+    transform: rotate(360deg);
+ }
+
 
 /* Entête */
 header {
@@ -28,7 +35,28 @@ header {
 
 header .logo-container {
     margin-bottom: 15px;
-}
+    border: solid;
+    width: 150px;
+    height: 53.2px;
+    margin-left: 44%;
+    border-color: chartreuse;
+    border-width: 6px;
+    border-radius: 3px;
+    animation: changeBorder 1.5s infinite;}
+/* Animation pour la bordure */
+@keyframes changeBorder {
+    0% {
+      border-color: red;
+    }
+    50% {
+      border-color: blue;
+    }
+    100% {
+      border-color: green;
+    }
+  }
+  
+
 
 header .logo-container img {
     max-width: 150px;
@@ -98,3 +126,16 @@ footer {
     color: white;
     font-size: 0.9rem;
 }
+.university{
+    width: 20%;
+    margin-left: 39.7%;
+    background-color: red;
+    animation: example 2s infinite;
+  }
+  
+  @keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: rgb(174, 174, 5);}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
