@@ -34,8 +34,8 @@ header {
 header .logo-container {
     margin-bottom: 15px;
     border: solid;
-    width: 150px;
-    height: 53.2px;
+    width: 180px;
+    height: 51px;
     margin: 0 auto; /* Centrer l'élément */
     border-color: chartreuse;
     border-width: 6px;
