@@ -9,7 +9,6 @@ body {
 
 /* Bar en haut avec le nom de l'éditeur */
 .top-bar {
-    
     width: 12%;
     color: rgb(36, 11, 196);
     padding: 10px;
@@ -17,18 +16,17 @@ body {
     text-align: left;
     font-size: 0.9rem;
     background: rgb(213, 193, 12);
-    transition: width 2s, height 2s, transform 2s;}
+    transition: width 2s, height 2s, transform 2s;
+}
 .top-bar:hover {
-    width: 12%;
     transform: rotate(360deg);
- }
-
+}
 
 /* Entête */
 header {
     text-align: center;
     padding: 20px 0;
-    background-color: #b80d77; /* Rouge */
+    background-color: #5cbecd; /* Rouge */
     color: white;
     border-bottom: 5px solid #cc0000; /* Rouge foncé */
 }
@@ -38,30 +36,22 @@ header .logo-container {
     border: solid;
     width: 150px;
     height: 53.2px;
-    margin-left: 44%;
+    margin: 0 auto; /* Centrer l'élément */
     border-color: chartreuse;
     border-width: 6px;
     border-radius: 3px;
-    animation: changeBorder 1.5s infinite;}
-/* Animation pour la bordure */
-@keyframes changeBorder {
-    0% {
-      border-color: red;
-    }
-    50% {
-      border-color: blue;
-    }
-    100% {
-      border-color: green;
-    }
-  }
-  
+    animation: changeBorder 1.5s infinite;
+}
 
+@keyframes changeBorder {
+    0% { border-color: red; }
+    50% { border-color: blue; }
+    100% { border-color: green; }
+}
 
 header .logo-container img {
     max-width: 150px;
     height: auto;
-    background-color: #f0f0f0;
 }
 
 header .university {
@@ -116,7 +106,6 @@ ul li {
     margin-bottom: 5px;
 }
 
-
 /* Footer */
 footer {
     text-align: center;
@@ -126,16 +115,60 @@ footer {
     color: white;
     font-size: 0.9rem;
 }
-.university{
+
+.university {
     width: 20%;
-    margin-left: 39.7%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: red;
     animation: example 2s infinite;
-  }
-  
-  @keyframes example {
-    0%   {background-color: red;}
-    25%  {background-color: rgb(174, 174, 5);}
-    50%  {background-color: blue;}
-    100% {background-color: green;}
-  }
+}
+
+@keyframes example {
+    0% { background-color: red; }
+    25% { background-color: rgb(174, 174, 5); }
+    50% { background-color: blue; }
+    100% { background-color: green; }
+}
+
+/* Media Queries pour smartphones */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0 10px;
+    }
+    
+    .top-bar {
+        width: 100%; /* Prendre toute la largeur de l'écran */
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    header .logo-container {
+        width: 120px; /* Réduire la taille du logo */
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Réduire la taille de la police */
+    }
+
+    header h2 {
+        font-size: 1.2rem;
+    }
+
+    section.exercise {
+        padding: 15px; /* Réduire les marges et padding */
+        margin: 10px 0;
+    }
+
+    footer {
+        font-size: 0.8rem; /* Réduire la taille du texte du footer */
+    }
+
+    .university {
+        width: 80%; /* Faire en sorte que l'élément prenne plus de largeur sur mobile */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
